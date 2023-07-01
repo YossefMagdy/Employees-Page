@@ -52,12 +52,10 @@ export class EmployeListComponent implements OnInit,DoCheck{
    
     let target = event.target as HTMLButtonElement
     let attributeValue = target.value  
-    console.log(attributeValue)
   }
 
   EmployeSetting(event:Event){
     let element=event.target as HTMLButtonElement
-    // console.log(element.firstElementChild?.classList.remove('d-none'))
     if(element.firstElementChild?.classList.contains('d-none')){
       element.firstElementChild?.classList.remove('d-none')
     }else{
