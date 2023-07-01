@@ -74,6 +74,7 @@ img{
     height: 0;
     transition: 1s all;
     z-index: 4567890;
+    background-color: #c3d2f2;
 }
 
 .searchbtn:focus{
@@ -116,5 +117,9 @@ img{
         display: none;
     }
 
+}
+
+.DropMenu{
+    left: 0;
 }
 }

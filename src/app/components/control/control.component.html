@@ -19,7 +19,7 @@
              <div class=" position-relative">
               <button class="btn  filterbtn" (click)="toggleDropMenu=!toggleDropMenu" ><img src="/assets/filter.png" class="" alt=""> فرز </button>
            
-              <ul  [ngStyle]="{'height':toggleDropMenu? '220px' : '0px','padding':toggleDropMenu? '10px':'0'}" class="position-absolute bg-black  DropMenu rounded-3 mt-2">
+              <ul  [ngStyle]="{'height':toggleDropMenu? '220px' : '0px','padding':toggleDropMenu? '10px':'0'}" class="position-absolute DropMenu rounded-3 mt-2">
                 <input #JOB (keyup)="search()"  [(ngModel)]="jobName" type="text" class="form-control" placeholder="بحث بالوظيفه">
                 <input #TYPE (keyup)="search()" type="text" [(ngModel)]="Type" class="form-control my-3" placeholder="بحث صلاحيه المستخدم">
                 <select #STATUS (change)="Select($event)" name="" id="" class="form-control mt-2" >
