@@ -1,0 +1,83 @@
+@import "../../../variable";
+.container{
+    background-color: white;
+    padding: 15px;
+    border-radius: 45px;
+}
+
+
+td{
+  vertical-align: middle;
+}
+
+  img{
+    width: 18px;
+    margin-left: 2px;
+
+}
+.true{
+  background-color: #edf9f5;
+  color: $Positive;
+}
+.false{
+  background-color: #fcf0f0;
+  color: $Negative  ;
+}
+
+.status{
+  text-align: center;
+  padding: 5px 5px;
+  span{
+    position: absolute;
+    right: 8px;
+    top: 39%;
+    transform: translateY(-50%);
+    font-weight: bolder;
+  }
+}
+
+
+
+
+.DropMenu{
+  position: absolute;
+  width: 50px;
+  left: 80px;
+  transition: 1s all;
+  z-index: 4567890;
+  
+  top: 38%;
+  transform: translateY(-50%);
+}
+.DropMenu::before{
+  content: "";
+  position: absolute;
+  border-width: 8px;
+  left: -17px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+  top: 50%;
+  transform: translateY(-50%);
+  
+}
+
+@media (max-width:996px){
+  .container{
+    overflow-x: scroll;
+  }
+  
+}
+
+tr:nth-child(even) {
+  
+  --bs-table-bg: #F6F7F9;
+}
+thead tr:first-child {
+  
+  --bs-table-bg: #F6F7F9;
+}
+
+.customTable{
+  border-radius: 28px ;
+  overflow: hidden;
+}

@@ -1,0 +1,120 @@
+@import "../../../variable";
+
+section{
+    margin-top: 36px;
+}
+
+.Control-BOX{
+    display: flex;
+    justify-content: space-between;
+}
+.Uicon{
+    width: 40px;
+    height: 40px;
+    background-color: #fcf0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-left: 14px;
+}
+img{
+    width: 20px;
+
+}
+
+.filterbtn{
+    position: relative;
+    margin: 0 16px;
+   
+}
+.filterbtn::before{
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 40px;
+    background-color: #C9CBD5;
+    left: -8px;
+    top: 1px;
+}
+.filterbtn::after{
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 40px;  
+    background-color: #C9CBD5;
+    right: -8px;
+    top: 1px;
+}
+.searchbtn,.filterbtn{
+ width: 99px;
+ height: 40px;   
+ border-radius: 20px;
+ border: 1px solid black;
+ transition: 1s all;
+}
+.addbtn{
+    width: 171px;
+    height: 40px;   
+    border-radius: 20px;
+    background-color: #2D4190;
+    color:white;
+    i{
+        border: 1px solid white;
+        padding: 1px;
+        border-radius: 50%;
+        font-weight: 100;
+        margin-left: 2px;
+    }
+   }
+
+.DropMenu{
+    overflow: hidden;
+    width: 250px;
+    height: 0;
+    transition: 1s all;
+    z-index: 4567890;
+}
+
+.searchbtn:focus{
+    width: 150px;
+}
+
+.SearchIcon{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+.box{
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width:770px){
+    .Control-BOX{
+        display: block  ;
+        text-align: center;
+    }
+ .ubox{
+    justify-content: center;
+ }
+}
+@media (max-width:550px){
+    .addbtn{
+        width: auto;
+    }
+}
+
+@media (max-width:467px){
+    .box{
+        display: block;
+    .addbtn{
+            margin: 10px 0;  
+    }
+    .filterbtn::before{
+        display: none;
+    }
+
+}
+}

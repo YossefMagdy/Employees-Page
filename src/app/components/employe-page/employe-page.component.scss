@@ -1,0 +1,45 @@
+@import "../../../variable";
+ul{
+    li:first-of-type{
+        width: 152px;
+        height: 32px;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin-left: 8px;
+        padding: 3px;
+        text-align: center;
+
+    }
+    li:not(:first-of-type){
+        width: 152px;
+        height: 32px;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin: 0 8px;
+        text-align: center;
+        padding: 3px;
+    }
+}
+.BackArrow{
+    font-size: 0.8em;
+    // width: 20px;
+    // height: 20px;
+    padding: 2px;
+    border: 1px solid black;
+    border-radius: 50%; 
+    margin-left:4px ;
+}
+
+.bg-darkblue{
+    background-color: $primary;
+}
+
+@media (max-width:770px) {
+    
+.container{
+    overflow-x: scroll;
+  }
+    ul{
+        padding-left: 50px;
+    }
+}

@@ -1,0 +1,25 @@
+<div class="px-3">
+    <nav>
+        <div class="container mt-4">
+            <div>
+                <p><i class="fa-solid fa-arrow-right BackArrow"></i>رجوع</p>
+            </div>
+            <div class="">
+                <ul class="d-flex list-unstyled justify-content-start pe-sm-0 px-3">
+                    <li class="cursor">المعلومات الأساسية </li>
+                    <li class="cursor">السياسات (73) </li>
+                    <li class="cursor" routerLink="/EmployePage" routerLinkActive="bg-darkblue text-white">المستخدمون ({{NumOfEmpolye}}) </li>
+                    <li class="cursor">حاملو الكروت (20) </li>
+                    <li class="cursor">المركبات (54)</li>
+                    <li class="cursor">المُعدات (62) </li>
+                    <li class="cursor">الحاويات (37)</li>
+                </ul>
+        
+            </div>
+        </div>
+    </nav>
+    
+    <app-control (FilterList)="HandleFilter($event)" (SearchByName)="HandleSearch($event)"></app-control>
+    
+    <app-employe-list  [SearchByJob]="Job"   [SearchByName]="Name"   [SearchBystatus]="Status"  [SearchBytype]="Type"   ></app-employe-list>
+</div>

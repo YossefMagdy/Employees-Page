@@ -1,0 +1,79 @@
+<section class="">
+    <div class="container Control-BOX bg-white p-4 rounded-4 ">
+        <div class="d-flex ubox align-items-center">
+            <div class="Uicon">
+                <img src="./assets/icons8-user-64.png" class="" alt="">
+            </div>
+            <div>
+                <span class="m-0 text-muted">عدد المستخدمون الكلي</span>
+                <h3 class="m-0 fs-4 fw-medium">{{NumOfEmpolye}} مستخدم</h3>
+            </div>
+        </div>
+        
+        <div class="mt-2 box">
+            <div class="d-flex justify-content-center">
+              <div class=" position-relative">
+                <input (keyup)="NameSearch()" [(ngModel)]="Name" type="text" class="form-control searchbtn text-center" placeholder="بحث">
+                <i class="fa-solid fa-magnifying-glass SearchIcon"></i>
+              </div>
+             <div class=" position-relative">
+              <button class="btn  filterbtn" (click)="toggleDropMenu=!toggleDropMenu" ><img src="/assets/filter.png" class="" alt=""> فرز </button>
+           
+              <ul  [ngStyle]="{'height':toggleDropMenu? '220px' : '0px','padding':toggleDropMenu? '10px':'0'}" class="position-absolute bg-black  DropMenu rounded-3 mt-2">
+                <input #JOB (keyup)="search()"  [(ngModel)]="jobName" type="text" class="form-control" placeholder="بحث بالوظيفه">
+                <input #TYPE (keyup)="search()" type="text" [(ngModel)]="Type" class="form-control my-3" placeholder="بحث صلاحيه المستخدم">
+                <select #STATUS (change)="Select($event)" name="" id="" class="form-control mt-2" >
+                  <option  selected  value="الكل">الكل</option>
+                  <option   value="فعال">فعال</option>
+                  <option   value="غير فعال">غير فعال</option>
+                </select>
+                <button (click)="Reset(JOB,TYPE,STATUS)" class="btn btn-warning mt-3">أعاده ضبط</button>
+                <button class="btn btn-danger mt-3 me-1" (click)="toggleDropMenu=false"> اغلاق</button>
+              </ul>
+              
+             </div>
+            </div>
+            
+
+
+
+            <button class="btn  addbtn"  data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-plus"></i> إضافة مستخدم
+            </button>
+        </div>
+    </div>
+
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" [formGroup]="Addform"  (ngSubmit)="Add(phoneNumber)">
+            <div class="modal-body">
+              <div *ngIf="Duplicate==true" class="alert alert-danger text-center">
+                <p>الاسم مكرر !!</p>
+              </div>
+                <input formControlName="name" type="text" class="form-control" name="" id="" placeholder="الاسم">
+              <input formControlName="job"   type="text" class="form-control my-2" name="" id="" placeholder="الوظيفه">
+              <input formControlName="mobile" #phoneNumber type="number"  class="form-control " name="" id="" placeholder="رقم الهاتف">
+              <select formControlName="type"  name="" id="" class="form-control mt-2" >
+                <option value="" selected>صلاحيه المستخدم</option>
+                <option value="حامل الكارت">حامل الكارت</option>
+                <option value="مدير الهيكل التنظيمي">مدير الهيكل التنظيمي </option>
+              </select>
+              <select formControlName="status"  name="" id="" class="form-control mt-2" >
+                <option value="" selected>الحاله</option>
+                <option value="فعال">فعال</option>
+                <option value="غير فعال">غير فعال</option>
+              </select>
+              
+            </div>
+            <div class="modal-footer" >
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">اغلاق</button>
+              <button  type="submit" [disabled]="!Addform.valid"  class="btn btn-primary">اضافه</button>
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
+    </section>
